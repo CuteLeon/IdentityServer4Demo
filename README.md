@@ -119,3 +119,31 @@ Token Endpoint 会通过响应的 Body 返回 Json 格式的以上错误数据�
 ## OpenId Connect
 
 ​	OpenId Connect 基于 OAuth 2.0 实现，用于实现用户认证（是谁）。
+
+​	使用 ID Token，包含用户的信息，配合 AccessToken 一起使用。
+
+​	UserInfo端点，用于获取用户信息。
+
+​	预设一组标识身份的Scope和Claims: profile、email、address、phone
+
+### 流程
+
+1. 客户端(Relying Party)发送请求到身份提供商(OpenID Provider)。
+2. 身份认证提供商验证用户身份和获得用户委派的权限，并回应AccessToken。
+3. 客户端使用AccessToken向UserInfo端点发送请求。
+4. 身份提供商回应用户Claims。
+
+### 流程
+
+#### Authorization Code Flow
+
+​	验证码流程
+
+#### Impplicit Flow
+
+​	简化流程
+
+#### Hybrid Flow
+
+​	验证码流程和简化流程的混合流程
+
