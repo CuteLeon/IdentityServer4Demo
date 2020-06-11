@@ -1,5 +1,20 @@
 # Identity Server 4
 
+# Auth
+
+Authorization: 授权
+
+Authentication: 身份认证
+
+​	可以通过**授权**实现**身份认证**。
+
+## 为什么OAuth2.0 AccessToken不能解决认证的问题？
+
+1. AccessToken不包含身份认证信息
+2. AccessToken生命周期可能很长
+3. AccessToken可能被其他客户端直接借用
+4. AccessToken不是为客户端准备的，而是为被保护的资源
+
 # 协议
 
 ## OAuth 2.0
@@ -103,4 +118,4 @@ Token Endpoint 会通过响应的 Body 返回 Json 格式的以上错误数据�
 
 ## OpenId Connect
 
-​	OpenId Connect 基于 OAuth 2.0，用于实现用户认证（是谁）。
+​	OpenId Connect 基于 OAuth 2.0 实现，用于实现用户认证（是谁）。
