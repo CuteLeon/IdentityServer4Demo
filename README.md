@@ -139,11 +139,21 @@ Token Endpoint 会通过响应的 Body 返回 Json 格式的以上错误数据�
 
 ​	验证码流程
 
-#### Impplicit Flow
+#### Implicit Flow
 
 ​	简化流程
 
 #### Hybrid Flow
 
 ​	验证码流程和简化流程的混合流程
+
+# QuickStart
+
+## 安装IdentityServer4模板
+
+​	在CMD执行以下命令以安装模板：
+
+```
+dotnet new -i IdentityServer4.Templates
+```
 
