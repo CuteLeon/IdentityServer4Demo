@@ -157,3 +157,22 @@ Token Endpoint 会通过响应的 Body 返回 Json 格式的以上错误数据�
 dotnet new -i IdentityServer4.Templates
 ```
 
+## 创建项目
+
+​	使用以下命令快速创建一个IdentityServer4项目：
+
+```
+dotnet new mvc --auth Individual --name IdentityProvider
+```
+
+​	或者使用下面的模板：
+
+```
+dotnet new is4admin --name IdentityProvider
+dotnet new is4aspid --name IdentityProvider
+dotnet new is4empty --name IdentityProvider
+dotnet new is4ef --name IdentityProvider
+dotnet new is4inmem --name IdentityProvider
+dotnet new is4ui --name IdentityProvider
+```
+
