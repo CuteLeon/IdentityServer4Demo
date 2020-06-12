@@ -26,6 +26,15 @@ namespace WebAPIProvider
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAuthorization();
+
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer", options =>
+                {
+                    options.Authority = "https://localhost:5000";
+                    options.RequireHttpsMetadata = true;
+                    options.Audience = "api1";
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

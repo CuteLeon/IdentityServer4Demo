@@ -43,18 +43,18 @@ namespace ConsoleClient
             Console.WriteLine($"Get Console Client token successfully:\n\t{nameof(token.AccessToken)}= {token.AccessToken.Left()}\n\t{nameof(token.IdentityToken)}= {token.IdentityToken.Left()}\n\t{nameof(token.RefreshToken)}= {token.RefreshToken.Left()}");
 
             // Call api
-            Console.WriteLine($"Get user info ...");
+            Console.WriteLine($"Get Weather Forecast ...");
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(token.AccessToken);
-            var userInfoResponse = await apiClient.GetAsync(discovery.UserInfoEndpoint);
-            if (!userInfoResponse.IsSuccessStatusCode)
+            var apiResponse = await apiClient.GetAsync("https://localhost:5001/WeatherForecast");
+            if (!apiResponse.IsSuccessStatusCode)
             {
-                Console.WriteLine($"Failed: {userInfoResponse.StatusCode}");
+                Console.WriteLine($"Failed: {apiResponse.StatusCode}");
                 Exit(-3);
                 return;
             }
-            var content = await userInfoResponse.Content.ReadAsStringAsync();
-            Console.WriteLine($"Get user info successfully: {JArray.Parse(content)}");
+            var content = await apiResponse.Content.ReadAsStringAsync();
+            Console.WriteLine($"Get Weather Forecast successfully: {JArray.Parse(content)}");
 
             Console.Read();
         }
