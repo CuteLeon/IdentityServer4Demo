@@ -16,7 +16,7 @@ namespace ConsoleClient
 
             // Request discory document
             Console.WriteLine("Get dicovery document of Identity provider site ...");
-            var discovery = await client.GetDiscoveryDocumentAsync("https://localhost:5001/");
+            var discovery = await client.GetDiscoveryDocumentAsync("https://localhost:5000/");
             if (discovery.IsError)
             {
                 Console.WriteLine($"Failed: {discovery.Error}");
