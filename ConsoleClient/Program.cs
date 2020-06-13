@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using IdentityModel.Client;
@@ -23,7 +25,7 @@ namespace ConsoleClient
                 Exit(-1);
                 return;
             }
-            Console.WriteLine($"Get discovery document successfully:\n\t{discovery.Issuer}\n\t{discovery.TokenEndpoint}\n\t{discovery.AuthorizeEndpoint}\n\t{discovery.UserInfoEndpoint}");
+            Console.WriteLine($"Get discovery document successfully:\n\t{discovery.Issuer}\n\t{discovery.TokenEndpoint}");
 
             // Request client token, using TokenEndpoint、ClientID+ClientSecret(writed in Identity Provider Config)
             Console.WriteLine($"Get Console Client token ...");
@@ -40,7 +42,7 @@ namespace ConsoleClient
                 Exit(-2);
                 return;
             }
-            Console.WriteLine($"Get Console Client token successfully:\n\t{nameof(token.AccessToken)}= {token.AccessToken.Left()}\n\t{nameof(token.IdentityToken)}= {token.IdentityToken.Left()}\n\t{nameof(token.RefreshToken)}= {token.RefreshToken.Left()}");
+            Console.WriteLine($"Get Console Client token successfully:\n\t{token.AccessToken.Left()}");
 
             // Call api
             Console.WriteLine($"Get Weather Forecast ...");
@@ -55,6 +57,8 @@ namespace ConsoleClient
             }
             var content = await apiResponse.Content.ReadAsStringAsync();
             Console.WriteLine($"Get Weather Forecast successfully: {JArray.Parse(content)}");
+            var userClaims = apiResponse.Headers.GetValues("UserClaims") as IEnumerable<string>;
+            Console.WriteLine($"User Claims:\n\t{string.Join("\n\t", userClaims)}");
 
             Console.Read();
         }
