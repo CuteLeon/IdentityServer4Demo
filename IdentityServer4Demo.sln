@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIProvider", "WebAPIProvider\WebAPIProvider.csproj", "{991B74B7-0B09-4814-B8C5-D58AE270ABEC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientCredentials", "ClientCredentials", "{9CD9F237-C967-4C1C-A306-7F3452B41DA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0082D52-51C3-4CEB-BEBD-E8DE6264346A} = {9CD9F237-C967-4C1C-A306-7F3452B41DA8}
+		{59EC5C92-F2BC-4849-BBFC-D75B207B928F} = {9CD9F237-C967-4C1C-A306-7F3452B41DA8}
+		{991B74B7-0B09-4814-B8C5-D58AE270ABEC} = {9CD9F237-C967-4C1C-A306-7F3452B41DA8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {48626100-A415-4A77-838D-D14B6E514713}
