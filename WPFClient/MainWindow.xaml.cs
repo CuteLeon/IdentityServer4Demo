@@ -25,6 +25,7 @@ namespace WPFClient
     public partial class MainWindow : Window
     {
         public TokenResponse Token { get; set; }
+        public DiscoveryDocumentResponse DiscoveryDocument { get; set; }
 
         public MainWindow()
         {
@@ -41,22 +42,22 @@ namespace WPFClient
 
                 // Request discory document
                 PrintOutput(this.TokenOutput, "Get dicovery document of Identity provider site ...");
-                var discovery = await client.GetDiscoveryDocumentAsync("https://localhost:5000/");
-                if (discovery.IsError)
+                DiscoveryDocument = await client.GetDiscoveryDocumentAsync("https://localhost:5000/");
+                if (DiscoveryDocument.IsError)
                 {
-                    PrintOutput(this.TokenOutput, $"Failed: {discovery.Error}");
+                    PrintOutput(this.TokenOutput, $"Failed: {DiscoveryDocument.Error}");
                     return;
                 }
-                PrintOutput(this.TokenOutput, $"Get discovery document successfully:\n\t{discovery.Issuer}\n\t{discovery.TokenEndpoint}");
+                PrintOutput(this.TokenOutput, $"Get discovery document successfully:\n\t{DiscoveryDocument.Issuer}\n\t{DiscoveryDocument.TokenEndpoint}");
 
                 // Request client token, using TokenEndpoint、ClientID+ClientSecret(writed in Identity Provider Config)、UserName+Password(writed in Identity Provider TestUsers)
                 PrintOutput(this.TokenOutput, $"Get User token ...");
                 this.Token = await client.RequestPasswordTokenAsync(new PasswordTokenRequest()
                 {
-                    Address = discovery.TokenEndpoint,
+                    Address = DiscoveryDocument.TokenEndpoint,
                     ClientId = "WPFClient",
                     ClientSecret = "84C0358B-B7A8-427A-933E-9F8FA080F3C5",
-                    Scope = "api1",
+                    Scope = "api1 openid profile",
                     UserName = userName,
                     Password = password,
                 });
@@ -103,6 +104,30 @@ namespace WPFClient
         {
             output.AppendText($"{message}\n");
             output.ScrollToEnd();
+        }
+
+        private async void GetIdentityButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Call identity
+                PrintOutput(this.IdentityOutput, $"Get Web API ...");
+                var identityClient = new HttpClient();
+                identityClient.SetBearerToken(this.Token.AccessToken);
+                var identityResponse = await identityClient.GetAsync(this.DiscoveryDocument.UserInfoEndpoint);
+                if (!identityResponse.IsSuccessStatusCode)
+                {
+                    PrintOutput(this.IdentityOutput, $"Failed: {identityResponse.StatusCode}");
+                    return;
+                }
+
+                var content = await identityResponse.Content.ReadAsStringAsync();
+                PrintOutput(this.IdentityOutput, $"Get identity successfully: {content}");
+            }
+            catch (Exception ex)
+            {
+                PrintOutput(this.IdentityOutput, $"Failed: {ex.Message}");
+            }
         }
     }
 }

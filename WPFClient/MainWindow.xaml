@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="800">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="40"/>
@@ -25,9 +27,12 @@
         <TextBox Text="CuteLeon" FontWeight="Bold" x:Name="UserNameInput" FontSize="24" Grid.Row="0" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" BorderThickness="0"/>
         <Label Content="Password:" Foreground="DimGray" Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
         <PasswordBox x:Name="PasswordInput" FontWeight="Bold" PasswordChar="·" Password="I'm cute Leon" FontSize="24" Grid.Row="0" Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0"/>
+        
         <Button x:Name="GetTokenButton" Content="Get Token" Grid.Row="1" Grid.ColumnSpan="4" Click="GetTokenButton_Click"/>
         <TextBox x:Name="TokenOutput" Grid.Row="2" Grid.ColumnSpan="4" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" BorderThickness="0"/>
         <Button x:Name="GetWebAPIButton" Content="Get Web API" Grid.Row="3" Grid.ColumnSpan="4" Click="GetWebAPIButton_Click"/>
         <TextBox x:Name="WebAPIOutput" Grid.Row="4" Grid.ColumnSpan="4" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" BorderThickness="0"/>
+        <Button x:Name="GetIdentityButton" Content="Get Identity" Grid.Row="5" Grid.ColumnSpan="4" Click="GetIdentityButton_Click"/>
+        <TextBox x:Name="IdentityOutput" Grid.Row="6" Grid.ColumnSpan="4" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" BorderThickness="0"/>
     </Grid>
 </Window>

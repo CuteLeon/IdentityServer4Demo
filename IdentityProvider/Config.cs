@@ -3,6 +3,7 @@
 
 
 using System.Collections.Generic;
+using IdentityServer4;
 using IdentityServer4.Models;
 
 namespace IdentityProvider
@@ -46,7 +47,12 @@ namespace IdentityProvider
                     {
                         new Secret("84C0358B-B7A8-427A-933E-9F8FA080F3C5".Sha256())
                     },
-                    AllowedScopes={ "api1" }
+                    AllowedScopes=
+                    {
+                        "api1",
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile
+                    }
                 }
             };
     }
