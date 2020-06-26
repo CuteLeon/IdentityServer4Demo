@@ -56,6 +56,19 @@ Authentication: 身份认证
 
 ​	用于客户端访问没有用户负责的资源，例如机器对机器的通信。客户端不代表用户，客户端本身就是资源的所有者。
 
+##### Token 请求
+
+```
+POST /token HTTP/1.1
+Host: authorization-server.com
+
+grant_type=client_credentials
+&client_id=...
+&client_secret=...
+```
+
+
+
 #### Device Code
 
 #### Refresh Token

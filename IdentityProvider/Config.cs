@@ -2,8 +2,8 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using IdentityServer4.Models;
 using System.Collections.Generic;
+using IdentityServer4.Models;
 
 namespace IdentityProvider
 {
@@ -36,6 +36,18 @@ namespace IdentityProvider
 
                     AllowedScopes = { "api1" }
                 },
+
+                // wpf client password grant
+                new Client()
+                {
+                    ClientId="WPFClient",
+                    AllowedGrantTypes= GrantTypes.ResourceOwnerPassword,
+                    ClientSecrets=
+                    {
+                        new Secret("WPF Secret".Sha256())
+                    },
+                    AllowedScopes={ "api1"}
+                }
             };
     }
 }

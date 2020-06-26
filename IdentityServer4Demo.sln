@@ -10,9 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{04
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityProvider", "IdentityProvider\IdentityProvider.csproj", "{B0082D52-51C3-4CEB-BEBD-E8DE6264346A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{59EC5C92-F2BC-4849-BBFC-D75B207B928F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{59EC5C92-F2BC-4849-BBFC-D75B207B928F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIProvider", "WebAPIProvider\WebAPIProvider.csproj", "{991B74B7-0B09-4814-B8C5-D58AE270ABEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIProvider", "WebAPIProvider\WebAPIProvider.csproj", "{991B74B7-0B09-4814-B8C5-D58AE270ABEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFClient", "WPFClient\WPFClient.csproj", "{2C595BEB-917F-4042-A363-3E818AACD972}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{991B74B7-0B09-4814-B8C5-D58AE270ABEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{991B74B7-0B09-4814-B8C5-D58AE270ABEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{991B74B7-0B09-4814-B8C5-D58AE270ABEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C595BEB-917F-4042-A363-3E818AACD972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C595BEB-917F-4042-A363-3E818AACD972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C595BEB-917F-4042-A363-3E818AACD972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C595BEB-917F-4042-A363-3E818AACD972}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
