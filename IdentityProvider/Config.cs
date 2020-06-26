@@ -44,9 +44,9 @@ namespace IdentityProvider
                     AllowedGrantTypes= GrantTypes.ResourceOwnerPassword,
                     ClientSecrets=
                     {
-                        new Secret("WPF Secret".Sha256())
+                        new Secret("84C0358B-B7A8-427A-933E-9F8FA080F3C5".Sha256())
                     },
-                    AllowedScopes={ "api1"}
+                    AllowedScopes={ "api1" }
                 }
             };
     }

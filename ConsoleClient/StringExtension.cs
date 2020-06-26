@@ -1,4 +1,4 @@
-﻿namespace ConsoleClient
+﻿namespace Client.Utiliy
 {
     public static class StringExtension
     {
