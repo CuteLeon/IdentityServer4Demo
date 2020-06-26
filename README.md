@@ -52,6 +52,19 @@ Authentication: 身份认证
 
 ​	一般此类型仅仅在交换AccessToken时使用一次。
 
+```
+POST /oauth/token HTTP/1.1
+Host: authorization-server.com
+
+grant_type=password
+&username=...
+&password=...
+&client_id=...
+&client_secret=...
+```
+
+
+
 #### Client Credentials
 
 ​	用于客户端访问没有用户负责的资源，例如机器对机器的通信。客户端不代表用户，客户端本身就是资源的所有者。
