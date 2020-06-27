@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleCli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIProvider", "WebAPIProvider\WebAPIProvider.csproj", "{991B74B7-0B09-4814-B8C5-D58AE270ABEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFClient", "WPFClient\WPFClient.csproj", "{2C595BEB-917F-4042-A363-3E818AACD972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFClient", "WPFClient\WPFClient.csproj", "{2C595BEB-917F-4042-A363-3E818AACD972}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCClient", "MVCClient\MVCClient.csproj", "{ADF8029C-AA79-4C6E-AB9D-5B6B9BA7A70B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{2C595BEB-917F-4042-A363-3E818AACD972}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C595BEB-917F-4042-A363-3E818AACD972}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C595BEB-917F-4042-A363-3E818AACD972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADF8029C-AA79-4C6E-AB9D-5B6B9BA7A70B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF8029C-AA79-4C6E-AB9D-5B6B9BA7A70B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF8029C-AA79-4C6E-AB9D-5B6B9BA7A70B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF8029C-AA79-4C6E-AB9D-5B6B9BA7A70B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
