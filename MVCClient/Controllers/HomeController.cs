@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MVCClient.Models;
 
 namespace MVCClient.Controllers
 {
+    // 需要登录才可以访问
+    [Authorize()]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

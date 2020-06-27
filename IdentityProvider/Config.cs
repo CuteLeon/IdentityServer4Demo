@@ -41,13 +41,36 @@ namespace IdentityProvider
                 // wpf client password grant
                 new Client()
                 {
-                    ClientId="WPFClient",
-                    AllowedGrantTypes= GrantTypes.ResourceOwnerPassword,
-                    ClientSecrets=
+                    ClientId = "WPFClient",
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    ClientSecrets =
                     {
                         new Secret("84C0358B-B7A8-427A-933E-9F8FA080F3C5".Sha256())
                     },
-                    AllowedScopes=
+                    AllowedScopes =
+                    {
+                        "api1",
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile
+                    }
+                },
+
+                // MVC client grant
+                new Client()
+                {
+                    ClientId = "WVCClient",
+                    ClientName = "MVC Client",
+                    AllowedGrantTypes = GrantTypes.CodeAndClientCredentials,
+                    ClientSecrets =
+                    {
+                        new Secret("6DDB3EB5-BFA3-41C7-B158-DE475548CC00".Sha256())
+                    },
+
+                    RedirectUris = { "http://localhost:5002/signin-oidc" },
+                    FrontChannelLogoutUri = "http://localhost:5002/signout-oidc",
+                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+
+                    AllowedScopes =
                     {
                         "api1",
                         IdentityServerConstants.StandardScopes.OpenId,
